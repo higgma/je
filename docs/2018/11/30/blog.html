@@ -141,7 +141,7 @@ To https://github.com/higgma/je.git
 
 <p>ここで、GitHubの認証が必要であり、GitHubのパスワードを入力することにする。</p>
 
-<p>あなたが複数のGitHubアカウントを使っていると、アカウントの認証情報が互いに干渉するかもしれないと心配になるかもしれない。だが、Push先のremote.origin.urlはユニークであるため、もしGitHubアカウントを間違えていたらpushに失敗するだけであり、その心配は無用である。</p>
+<p>あなたが複数のGitHubアカウントを使っていると、アカウントの認証情報が互いに干渉するかもと心配かもしれない。だが、Push先のremote.origin.urlはユニークであるため、もしGitHubアカウントを間違えていたらpushに失敗するだけであり、安心してよい。</p>
 
 <h2 id="circleci">CircleCI</h2>
 
@@ -210,8 +210,8 @@ jobs:
 
 <ul>
   <li>CircleCIが対象リポジトリをFollowしているかどうか確認する。<code class="highlighter-rouge">.circleci/config.yml</code>付きリポジトリが更新されたとき、ジョブを回る条件として、CircleCIのアプリが、対象リポジトリをFollowしている必要がある（逆にいえば、CIが暴走したときは、Unfollowする）。</li>
-  <li>自動git pushがさらなるCIを呼ばないようにコミットメッセージに<code class="highlighter-rouge">[ci skip]</code>をつける。</li>
   <li>Deploy KeyではなくUser Keyを使う。Deploy KeyにはWrite権限がなく、git push origin master が失敗する原因にありがち。</li>
+  <li>自動git pushがさらなるCIを呼ばないようにコミットメッセージに<code class="highlighter-rouge">[ci skip]</code>をつける。</li>
 </ul>
 
 
