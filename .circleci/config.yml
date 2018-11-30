@@ -41,10 +41,11 @@ jobs:
           command: bundle exec jekyll build
 
       - run:
-          name: Git Push
+          name: Git Commit
           command: |
               git config --global user.name CircleCI
               git config --global user.email "<>"
               git add -A
               git commit -m "${CIRCLE_BRANCH} (Circle CI)"
-              git push origin master
+      
+      - run: git push origin master
