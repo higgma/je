@@ -48,5 +48,4 @@ jobs:
               git add -A
               git commit -m "[ci skip] Circle CI"
       
-      - run: git push origin master
-
+      - run: git push git@github.com:higgma/je master
