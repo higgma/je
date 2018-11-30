@@ -41,5 +41,5 @@ jobs:
           command: bundle exec jekyll build
 
       - run: git add .
-      - run: git commit -m '\:wrench\: CircleCI'
+      - run: git commit -m '":"wrench":" CircleCI'
       - run: git push origin master
