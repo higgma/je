@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/je/feed.xml" rel="self" type="application/atom+xml" /><link href="/je/" rel="alternate" type="text/html" /><updated>2018-11-30T06:54:38+00:00</updated><id>/je/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/je/jekyll/update/2018/11/30/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-11-30T02:37:51+00:00</published><updated>2018-11-30T02:37:51+00:00</updated><id>/je/jekyll/update/2018/11/30/welcome-to-jekyll</id><content type="html" xml:base="/je/jekyll/update/2018/11/30/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">ブログを作った(Jekyll, CircleCI, GitHub Pages)</title><link href="/je/2018/11/30/blog.html" rel="alternate" type="text/html" title="ブログを作った(Jekyll, CircleCI, GitHub Pages)" /><published>2018-11-30T00:00:00+00:00</published><updated>2018-11-30T00:00:00+00:00</updated><id>/je/2018/11/30/blog</id><content type="html" xml:base="/je/2018/11/30/blog.html">&lt;p&gt;人は何故「ブログを作った」というブログエントリを書いてしまうのだろう。&lt;/p&gt;
+
+&lt;h2 id=&quot;要素&quot;&gt;要素&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Jekyll (手直しできないのが気に入らないのでHugoにしたい)&lt;/li&gt;
+  &lt;li&gt;CircleCI&lt;/li&gt;
+  &lt;li&gt;GitHub Pages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;gitの名義管理&quot;&gt;Gitの名義管理&lt;/h2&gt;
+
+&lt;p&gt;我々は日々署名を求められている。間違って恥ずかしい名前を載せたくないものだ。そんな名前で大丈夫か？&lt;/p&gt;
+
+&lt;p&gt;以下のコマンドは、一度実行すれば、&lt;code class=&quot;highlighter-rouge&quot;&gt;./.git/config&lt;/code&gt; に設定として永続化される。もし手元のPCでochinchinというユーザーネームを使っていても、コミットログにはその気配を残さない。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# .giitignore
+myconfig.sh
+
+# myconfig.sh
+git config user.useConfigOnly true
+NAME=&quot;Higuma&quot;
+EMAIL=&quot;higgma@example.com&quot;
+git config user.name $NAME
+git config user.email $EMAIL
+echo &quot;Set user.name as $(git config --get user.name)&quot;
+echo &quot;Set user.email as $(git config --get user.email)&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt; がどのような情報を持っているかを見てみよう。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --list --local
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+remote.origin.url=https://github.com/higgma/je.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+user.useconfigonly=true
+user.name=Higuma
+user.email=higgma@example.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ところで &lt;code class=&quot;highlighter-rouge&quot;&gt;git config&lt;/code&gt; コマンド全般について、インターネットを見ていると &lt;code class=&quot;highlighter-rouge&quot;&gt;--global&lt;/code&gt; なる引数を見かけることがある。これは &lt;code class=&quot;highlighter-rouge&quot;&gt;./.git/config&lt;/code&gt; ではなく &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.gitconfig&lt;/code&gt; に対して永続化をもたらす。&lt;/p&gt;
+
+&lt;p&gt;つまり、設定がPC全体に影響する。常に同じ名義を使う場合、つまり大方のケースでは&lt;code class=&quot;highlighter-rouge&quot;&gt;--global&lt;/code&gt;をつけるだろうが、特定のプロジェクト（フォルダ）に設定を閉じ込めたい場合、この引数は使わない。&lt;/p&gt;
+
+&lt;h2 id=&quot;ブログを作る&quot;&gt;ブログを作る&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler jekyll
+jekyll new my-awesome-site
+cd my-awesome-site
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;なお、GitHub Pagesは&lt;code class=&quot;highlighter-rouge&quot;&gt;docs/&lt;/code&gt;を読むので、Jekyllの設定ファイル&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;に次を加える。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;destination: docs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;イニシャルコミット&quot;&gt;イニシャルコミット&lt;/h2&gt;
+
+&lt;p&gt;コミットする。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+git add .
+git commit -m &quot;Initial Commit&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git log
+commit 6e5547a60ad7bed7bbf73cba40ba650bc5faa00b (HEAD -&amp;gt; master, origin/master)
+Author: Higuma &amp;lt;higgma@example.com&amp;gt;
+Date:   Fri Nov 30 12:03:33 2018 +0900
+
+    Initial Commit
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;プッシュする。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git push origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (11/11), 3.96 KiB | 1.98 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/higgma/je/pull/new/master
+remote:
+To https://github.com/higgma/je.git
+ * [new branch]      master -&amp;gt; master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;ここで、GitHubの認証が必要であり、GitHubのパスワードを入力することにする。&lt;/p&gt;
+
+&lt;p&gt;あなたが複数のGitHubアカウントを使っていると、アカウントの認証情報が互いに干渉するかもしれないと心配になるかもしれない。だが、Push先のremote.origin.urlはユニークであるため、もしGitHubアカウントを間違えていたらpushに失敗するだけであり、その心配は無用である。&lt;/p&gt;
+
+&lt;h2 id=&quot;circleci&quot;&gt;CircleCI&lt;/h2&gt;
+
+&lt;p&gt;我々は大人ぶることを求められている。CIツールを使うと大人っぽく見える。GitHubアカウントで無料でサインアップできる。&lt;/p&gt;
+
+&lt;p&gt;CircleCIの雑な理解は、Followしてあるリポジトリが、&lt;code class=&quot;highlighter-rouge&quot;&gt;.circleci/config.yml&lt;/code&gt;付きで更新されると、設定ファイルに従ってCIが回るというものである&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.circleci/config.yml&lt;/code&gt; は公式の雛形（リポジトリをFollowしようとするときに、いい感じのものを表示してくれる）を元に書くことにする。Jekyll buildの段からが自分で書いた部分。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+       - image: circleci/ruby:2.4.1-node-browsers
+      
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # - image: circleci/postgres:9.4
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-
+
+      - run:
+          name: Jekyll build
+          command: bundle exec jekyll build
+
+      - run:
+          name: Git Commit
+          command: |
+              git config --global user.name CircleCI
+              git config --global user.email &quot;&amp;lt;&amp;gt;&quot;
+              git add -A
+              git commit -m &quot;[ci skip] Circle CI&quot;
+      
+      - run: git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;circleciハマりまとめ&quot;&gt;CircleCIハマりまとめ&lt;/h2&gt;
+
+&lt;p&gt;初見でいけるやろと雰囲気でやったらひどくやられた。ごめんなさい許して。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;CircleCIが対象リポジトリをFollowしているかどうか確認する。&lt;code class=&quot;highlighter-rouge&quot;&gt;.circleci/config.yml&lt;/code&gt;付きリポジトリが更新されたとき、ジョブを回る条件として、CircleCIのアプリが、対象リポジトリをFollowしている必要がある（逆にいえば、CIが暴走したときは、Unfollowする）。&lt;/li&gt;
+  &lt;li&gt;自動git pushがさらなるCIを呼ばないようにコミットメッセージに&lt;code class=&quot;highlighter-rouge&quot;&gt;[ci skip]&lt;/code&gt;をつける。&lt;/li&gt;
+  &lt;li&gt;Deploy KeyではなくUser Keyを使う。Deploy KeyにはWrite権限がなく、git push origin master が失敗する原因にありがち。&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">人は何故「ブログを作った」というブログエントリを書いてしまうのだろう。</summary></entry></feed>
