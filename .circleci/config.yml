@@ -39,15 +39,12 @@ jobs:
       - run:
           name: Jekyll build
           command: bundle exec jekyll build
-      
-      - run: |
-          echo $(git config --global user.email)
-          echo $(git config --global user.name)
-      
-      - run: |
-          git add .
-          git \
-            -c user.email=$(git config --global user.email) \
-            -c user.name=$(git config --global user.name) \
-            commit -m '":"wrench":" CircleCI'
-          git push origin master
+
+      - run:
+          name: Git Push
+          command: |
+              git config --global user.name CircleCI
+              git config --global user.email "<>"
+              git add -A
+              git commit -m "${CIRCLE_BRANCH} (Circle CI)"
+              git push origin master
