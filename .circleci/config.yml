@@ -40,6 +40,7 @@ jobs:
           name: Jekyll build
           command: bundle exec jekyll build
 
+      - run: git config --local user.useConfigOnly false
       - run: git add .
       - run: git commit -m '":"wrench":" CircleCI'
       - run: git push origin master
