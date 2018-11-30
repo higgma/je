@@ -46,6 +46,6 @@ jobs:
               git config --global user.name CircleCI
               git config --global user.email "<>"
               git add -A
-              git commit -m "${CIRCLE_BRANCH} (Circle CI)"
+              git commit -m "[ci skip] Circle CI"
       
       - run: git push git@github.com:higgma/je
