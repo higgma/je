@@ -43,8 +43,8 @@ jobs:
       - run: git config --local user.useConfigOnly false
       - run: git add .
       - run: |
-        git \
-          -c user.email=$(git config --global user.email) \
-          -c user.name=$(git config --global user.name) \
-          commit -m '":"wrench":" CircleCI'
+          git \
+            -c user.email=$(git config --global user.email) \
+            -c user.name=$(git config --global user.name) \
+            commit -m '":"wrench":" CircleCI'
       - run: git push origin master
